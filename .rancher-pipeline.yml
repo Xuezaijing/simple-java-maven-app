@@ -3,7 +3,7 @@ stages:
   steps:
   - runScriptConfig:
       image: java:8
-      shellScript: '''mvn -B -DskipTests clean package'''
+      shellScript: '''echo "building"'''
 - name: test
   steps:
   - runScriptConfig:
