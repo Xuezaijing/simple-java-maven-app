@@ -2,7 +2,7 @@ stages:
 - name: deploy
   steps:
   - runScriptConfig:
-      image: busybox
-      shellScript: '''./jenkins/scripts/deliver.sh'''
+      image: java:8
+      shellScript: ./jenkins/scripts/deliver.sh
 timeout: 60
 notification: {}
