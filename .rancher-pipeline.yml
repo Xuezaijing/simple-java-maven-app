@@ -3,16 +3,16 @@ stages:
   steps:
   - runScriptConfig:
       image: java:8
-      shellScript: mvn -B -DskipTests clean package
+      shellScript: '''mvn -B -DskipTests clean package'''
 - name: test
   steps:
   - runScriptConfig:
       image: java:8
-      shellScript: mvn test
+      shellScript: '''mvn test'''
 - name: deploy
   steps:
   - runScriptConfig:
       image: java:8
-      shellScript: sh ./jenkins/scripts/deliver.sh
+      shellScript: '''./jenkins/scripts/deliver.sh'''
 timeout: 60
 notification: {}
