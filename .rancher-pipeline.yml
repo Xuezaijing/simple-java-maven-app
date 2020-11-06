@@ -13,4 +13,7 @@ stages:
       JAVA_HOME: /usr/lib/jvm/java-1.8.0-openjdk
       M2_HOME: /root/apache-maven-3.5.4
 timeout: 60
+branch:
+  include:
+  - master
 notification: {}
