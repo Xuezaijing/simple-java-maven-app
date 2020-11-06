@@ -1,18 +1,4 @@
 stages:
-- name: build
-  # 阶段条件
-  when:
-    branch: master
-    event: [push, pull_request]
-  steps:
-  - runScriptConfig:
-      image: busybox
-      shellScript: '''echo "building"'''
-- name: test
-  steps:
-  - runScriptConfig:
-      image: busybox
-      shellScript: '''mvn test'''
 - name: deploy
   steps:
   - runScriptConfig:
