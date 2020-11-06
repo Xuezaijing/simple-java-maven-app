@@ -4,6 +4,10 @@ stages:
   - runScriptConfig:
       image: maven:3-jdk-8
       shellScript: mvn clean install
+    when:
+      branch:
+        include:
+        - master
 - name: deploy
   steps:
   - runScriptConfig:
@@ -12,6 +16,10 @@ stages:
     env:
       JAVA_HOME: /usr/lib/jvm/java-1.8.0-openjdk
       M2_HOME: /root/apache-maven-3.5.4
+    when:
+      branch:
+        include:
+        - master
 timeout: 60
 branch:
   include:
