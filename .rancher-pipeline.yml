@@ -1,4 +1,9 @@
 stages:
+- name: build
+  steps:
+  - runScriptConfig:
+      image: maven:3-jdk-8
+      shellScript: mvn clean install
 - name: deploy
   steps:
   - runScriptConfig:
