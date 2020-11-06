@@ -1,18 +1,22 @@
 stages:
 - name: build
+  # 阶段条件
+  when:
+    branch: master
+    event: [push, pull_request]
   steps:
   - runScriptConfig:
-      image: java:8
+      image: busybox
       shellScript: '''echo "building"'''
 - name: test
   steps:
   - runScriptConfig:
-      image: java:8
+      image: busybox
       shellScript: '''mvn test'''
 - name: deploy
   steps:
   - runScriptConfig:
-      image: java:8
+      image: busybox
       shellScript: '''./jenkins/scripts/deliver.sh'''
 timeout: 60
 notification: {}
